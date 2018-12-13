@@ -17,6 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^timestamp/', include('timestamp.urls')),
+    url(r'', include('timestamp.urls', namespace="timestamp")),
     url(r'^admin/', admin.site.urls),
 ]
