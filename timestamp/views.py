@@ -21,13 +21,13 @@ def timestamp(request, date):
     try:
         test_date['unix'] = calendar.timegm(datetime.datetime(int(split_date[0]), int(split_date[1]), int(split_date[2])).utctimetuple())
         test_date['utc'] = datetime.datetime(int(split_date[0]), int(split_date[1]), int(split_date[2])).strftime('%a, %d %b %Y %H:%M:%S %Z')
-        print test_date
+        #print test_date
         return JsonResponse(test_date)
     except IndexError as inn:
         print inn
         test_date['unix'] = date
         test_date['utc'] = datetime.datetime.utcfromtimestamp(float(date)).strftime('%a, %d %b %Y %H:%M:%S %Z')
-        print test_date
+        #print test_date
         return JsonResponse(test_date)
 
 
@@ -36,7 +36,7 @@ def unix_timestamp(request, unix_time):
     test_date = {}
     test_date['unix'] = unix_time
     test_date['utc'] = datetime.datetime.utcfromtimestamp(float(unix_time)).strftime('%a, %d %b %Y %H:%M:%S %Z')
-    print test_date
+    #print test_date
 
     return JsonResponse(test_date)
 
@@ -45,7 +45,7 @@ def whoami(request):
     whoiam['ipaddress'] = get_client_ipaddress(request)
     whoiam['software'] = request.META['HTTP_USER_AGENT']
     whoiam['language'] = request.META['HTTP_ACCEPT_LANGUAGE']
-    print whoiam
+    #print whoiam
     return JsonResponse(whoiam)
 
 def get_client_ipaddress(req):
