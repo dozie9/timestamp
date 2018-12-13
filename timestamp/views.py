@@ -24,7 +24,7 @@ def timestamp(request, date):
         #print test_date
         return JsonResponse(test_date)
     except IndexError as inn:
-        print inn
+        #print inn
         test_date['unix'] = date
         test_date['utc'] = datetime.datetime.utcfromtimestamp(float(date)).strftime('%a, %d %b %Y %H:%M:%S %Z')
         #print test_date
