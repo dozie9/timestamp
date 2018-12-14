@@ -25,7 +25,7 @@ SECRET_KEY = '*#+x+ek2cylgx6h_@8#tiw7@(&!r#46n=5fg_kgg%tup!)w3ew'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['timescheck.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','timescheck.herokuapp.com']
 
 
 # Application definition

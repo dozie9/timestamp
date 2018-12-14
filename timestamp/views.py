@@ -31,12 +31,11 @@ def timestamp(request, date):
         return JsonResponse(test_date)
 
 
-def unix_timestamp(request, unix_time):
+def invalid_date(request, error):
 
     test_date = {}
-    test_date['unix'] = unix_time
-    test_date['utc'] = datetime.datetime.utcfromtimestamp(float(unix_time)).strftime('%a, %d %b %Y %H:%M:%S %Z')
-    #print test_date
+    test_date['error'] = "Invalid Date"
+    print test_date
 
     return JsonResponse(test_date)
 
